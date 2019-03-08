@@ -1,0 +1,25 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "description": "Meliora greeter bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "greeting",
+    "greeter",
+    "automatically",
+    "greet"
+  ],
+  "author": "William Blommaert",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^4.0.0",
+    "node-opus": "^0.3.0",
+    "opusscript": "0.0.6"
+  }
+}
