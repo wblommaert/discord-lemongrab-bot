@@ -93,6 +93,15 @@ client.on("voiceStateUpdate", (oldMember, newMember) => {
                     connection.disconnect();
                 });
             });
+        } else if (newMember.user.username.toLowerCase() === 'drakesdance') {
+            newUserChannel.join().then(connection => {
+                const dispatcher = connection.playFile('./lionking.mp3');
+                dispatcher.setVolume(0.75);
+                dispatcher.on('end', () => {
+                    console.log('Finished playing!');
+                    connection.disconnect();
+                });
+            });
         }
     }
     /*else if (newUserChannel === undefined) {
