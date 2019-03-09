@@ -46,6 +46,17 @@ client.on("message", (message) => {
                 connection.disconnect();
             });
         });
+    } else if (message.content.startsWith("!mad")) {
+        let channel = client.channels.get(general_channel_id);
+        channel.join().then(connection => {
+            const dispatcher = connection.playFile('./onlygame.mp3');
+
+            dispatcher.setVolume(0.75);
+            dispatcher.on('end', () => {
+                console.log('Only game!');
+                connection.disconnect();
+            });
+        });
     }
 
 });
