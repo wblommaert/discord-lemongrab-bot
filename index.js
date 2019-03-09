@@ -31,8 +31,18 @@ client.on("message", (message) => {
 
             dispatcher.setVolume(0.75);
             dispatcher.on('end', () => {
-                message.channel.send("A turtle made it to the water");
                 console.log('A turtle made it to the water');
+                connection.disconnect();
+            });
+        });
+    } else if (message.content.startsWith("!illusion")) {
+        let channel = client.channels.get(general_channel_id);
+        channel.join().then(connection => {
+            const dispatcher = connection.playFile('./illusion.mp3');
+
+            dispatcher.setVolume(0.75);
+            dispatcher.on('end', () => {
+                console.log('An illusion? What are you hiding?');
                 connection.disconnect();
             });
         });
